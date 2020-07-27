@@ -1,4 +1,5 @@
 // Imports:
+require('dotenv').config()
 const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
@@ -24,7 +25,7 @@ app.get("*", function (req, res) {
 });
 
 // Connection to MongoDB
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/googlebooks', { useNewUrlParser: true, useUnifiedTopology: true }, () => {
+mongoose.connect(process.env.MONGODB_URI || process.env.MONGO, { useNewUrlParser: true, useUnifiedTopology: true }, () => {
     console.log('successfully connected to database');
 });
 
