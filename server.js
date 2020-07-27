@@ -25,7 +25,7 @@ app.get("*", function (req, res) {
 });
 
 // Connection to MongoDB
-mongoose.connect(process.env.MONGODB_URI || process.env.MONGO, { useNewUrlParser: true, useUnifiedTopology: true }, () => {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://user:password123@ds013738.mlab.com:13738/heroku_z9vjw05t', { useNewUrlParser: true, useUnifiedTopology: true }, () => {
     console.log('successfully connected to database');
 });
 
