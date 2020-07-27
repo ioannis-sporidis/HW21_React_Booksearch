@@ -1,6 +1,6 @@
 import React from 'react';
 
-function SearchBar(props) {
+const SearchBar = (props) => {
 
     return (
         <div id='search-form' className='text-center'>
