@@ -25,7 +25,8 @@ app.get("*", function (req, res) {
 });
 
 // Connection to MongoDB
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://user:password123@ds013738.mlab.com:13738/heroku_z9vjw05t', { useNewUrlParser: true, useUnifiedTopology: true }, () => {
+const uri = process.env.mongodb || 'mongodb://localhost:27017/googlebooks'
+mongoose.connect(uri, { useNewUrlParser: true, useFindAndModify: false }, () => {
     console.log('successfully connected to database');
 });
 
