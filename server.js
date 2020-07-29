@@ -25,8 +25,12 @@ app.get("*", function (req, res) {
 });
 
 // Connection to MongoDB
-const uri = process.env.mongodb || 'mongodb://localhost:27017/googlebooks'
-mongoose.connect(uri, { useNewUrlParser: true, useFindAndModify: false }, () => {
+const uri = process.env.mongodb || process.env.MONGO_LOCAL
+mongoose.connect(uri, {
+    useNewUrlParser: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true
+}, () => {
     console.log('successfully connected to database');
 });
 
